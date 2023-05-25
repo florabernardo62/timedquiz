@@ -1,5 +1,4 @@
 # timedquiz
-# Password Generator Starter Code
 
 ## Deployed link 
 
