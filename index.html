@@ -1,172 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Timed Quiz</title>
-        <link rel="stylesheet" href="assets/style.css" />
-    </head>
-    <body id="body-id">
-        <h1>are you ready to test your skills?</h1>
-        <p>once you click start, a series of coding questions will be provided. <br> play atention: if you answer incorrectly your time left will decrease.</p>
-        <!-- <input type="text" name="yourName" id="name" placeholder="type your name"> -->
-        <button id="start" onclick="startQuiz()">START</button>
-        <section id="questions">
+<html>
+<head>
+  <title>Coding Quiz</title>
+  <link rel="stylesheet"  href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Coding Quiz</h1>
+    <div id="quiz"></div>
+    <div id="results"></div>
+    <button id="start">Start Quiz</button>
+    <!--
+  GIVEN I am taking a code quiz
+  WHEN I click the start button
+  THEN a timer starts and I am presented with a question -->
+    <button id="submit">Submit</button>
+    <!--THEN I can save my initials and score-->
+    <input type="text" id="initials" placeholder="Enter your initials">
+  </div>
+  <!--After quiz is finished questions will appear here -->
+  <div id="scores"></div>
 
-                    <section id="questionOne">
-                        <h1> 1) What html stands for? </h1>
-                        <input  type="radio" value="incorrect-one" name="question-one" onclick="optionOne()"/> <label for="option-1">HyperText Markup Logarithms </label>
-                        <br>
-                        <input type="radio"  value="correct-one" name="question-one"  onclick="optionTwo()" /> <label for="option-2">HyperText Markup Language </label>
-                        <br>
-                        <input type="radio" value="incorrect-one" name="question-one"  onclick="optionThree()" /> <label for="option-3">HyperTexting Markup Language </label> 
-                        <br>
-                        <input type="radio"  value="incorrect-one" name="question-one"  onclick="optionFour()"/> <label for="option-4"> HyperTexting Markup Logarithms </label> 
-                        <br>
-                        <p id="output"></p>
-                        <button id="buttonTwo" onclick="question2()">NEXT</button>
-                    </section>
-                    <section id="questionTwo">
-                        <h1> 2) What html stands for? </h1>
-                        <input type="radio" value="incorrect-two" name="question-two"  onclick="optionFive()"/> <label for="option-5">HyperText Markup Logarithms </label>
-                        <br>
-                        <input type="radio"  value="correct-two" name="question-two"  onclick="optionSix()"/> <label for="option-6">HyperText Markup Language </label>
-                        <br>
-                        <input type="radio" value="incorrect-two" name="question-two"  onclick="optionSeven()"/> <label for="option-7">HyperTexting Markup Language </label> 
-                        <br>
-                        <input type="radio"  value="incorrect-two" name="question-two"  onclick="optionEight()"/> <label for="option-8"> HyperTexting Markup Logarithms </label> 
-                        <br>
-                        <p id="outputTwo"></p>
-                        <button id="buttonThree" onclick="question3()">NEXT</button>
-                    </section>
-                    <section id="questionThree">
-                        <h1> 3) What html stands for? </h1>
-                        <input type="radio" value="correct-three" name="question-three"  onclick="optionNine()"/> <label for="option-9">HyperText Markup Logarithms </label>
-                        <br>
-                        <input type="radio"  value="incorrect-three" name="question-three"  onclick="optionTen()"/> <label for="option-10">HyperText Markup Language </label>
-                        <br>
-                        <input type="radio" value="incorrect-three" name="question-three"  onclick="optionEleven()"/> <label for="option-11">HyperTexting Markup Language </label> 
-                        <br>
-                        <input type="radio"  value="incorrect-three" name="question-three"  onclick="optionTwelve()"/> <label for="option-12"> HyperTexting Markup Logarithms </label> 
-                        <br>
-                        <p id="outputThree"></p>
-                        <button id="buttonFour" onclick="question4()">NEXT</button>
-                    </section>
-                    <section id="questionFour">
-                        <h1> 4) What html stands for? </h1>
-                        <input type="radio" value="incorrect-four" name="question-four" onclick="optionThirteen()"/> <label for="option-13">HyperText Markup Logarithms </label>
-                        <br>
-                        <input type="radio"  value="incorrect-four" name="question-four" onclick="optionFourteen()" /> <label for="option-14">HyperText Markup Language </label>
-                        <br>
-                        <input type="radio" value="incorrect-four" name="question-four" onclick="optionFifteen()"/> <label for="option-15">HyperTexting Markup Language </label> 
-                        <br>
-                        <input type="radio"  value="correct-four" name="question-four" onclick="optionSixteen()" /> <label for="option-16"> HyperTexting Markup Logarithms </label> 
-                        <br>
-                        <p id="outputFour"></p>
-                        <button id="buttonFive" onclick="question5()">NEXT</button>
-                    </section>
-                    <section id="questionFive">
-                        <h1> 5) What html stands for? </h1>
-                        <input type="radio" value="incorrect-five" name="question-five" onclick="optionSeventeen()"/>  <label for="option-17">HyperText Markup Logarithms </label>
-                        <br>
-                        <input type="radio"  value="incorrect-five" name="question-five" onclick="optionEighteen()"/> <label for="option-18">HyperText Markup Language </label>
-                        <br>
-                        <input type="radio" value="incorrect-five" name="question-five" onclick="optionNineteen()"/> <label for="option-19">HyperTexting Markup Language </label> 
-                        <br>
-                        <input type="radio"  value="correct-five" name="question-five" onclick="optionTwenty()"/> <label for="option-20"> HyperTexting Markup Logarithms </label> 
-                        <br>
-                        <p id="outputFive"></p>
-                        <button id="buttonSix" onclick="question6()">NEXT</button>
-                    </section>
-                    <section id="questionSix">
-                        <h1> 6) What html stands for? </h1>
-                        <input type="radio" value="incorrect-six" name="question-six" onclick="optionTwentyOne()"/> <label for="option-21">HyperText Markup Logarithms </label>
-                        <br>
-                        <input type="radio"  value="correct-six" name="question-six" onclick="optionTwentyTwo()" /> <label for="option-22">HyperText Markup Language </label>
-                        <br>
-                        <input type="radio" value="incorrect-six" name="question-six" onclick="optionTwentyThree()"/> <label for="option-23">HyperTexting Markup Language </label> 
-                        <br>
-                        <input type="radio"  value="incorrect-six" name="question-six" onclick="optionTwentyFour()"/> <label for="option-24"> HyperTexting Markup Logarithms </label> 
-                        <br>
-                        <p id="outputSix"></p>
-                        <button id="buttonSeven" onclick="question7()">NEXT</button>
-                    </section>
-                    <section id="questionSeven">
-                        <h1> 7) What html stands for? </h1>
-                        <input type="radio" value="incorrect-seven" name="question-seven" onclick="optionTwentyFive()"/> <label for="option-25">HyperText Markup Logarithms </label>
-                        <br>
-                        <input type="radio"  value="incorrect-seven" name="question-seven" onclick="optionTwentySix()"/> <label for="option-26">HyperText Markup Language </label>
-                        <br>
-                        <input type="radio" value="correct-seven" name="question-seven" onclick="optionTwentySeven()"/> <label for="option-27">HyperTexting Markup Language </label> 
-                        <br>
-                        <input type="radio"  value="incorrect-seven" name="question-seven" onclick="optionTwentyEight()"/> <label for="option-28"> HyperTexting Markup Logarithms </label> 
-                        <br>
-                        <p id="outputSeven"></p>
-                        <button id="buttonEight" onclick="question8()">NEXT</button>
-                    </section>
-                    <section id="questionEight">
-                        <h1> 8) What html stands for? </h1>
-                        <input type="radio" value="correct-eight" name="question-eight" onclick="optionTwentyNine()"/> <label for="option-29">HyperText Markup Logarithms </label>
-                        <br>
-                        <input type="radio"  value="incorrect-eight" name="question-eight" onclick="optionThirty()"/> <label for="option-30">HyperText Markup Language </label>
-                        <br>
-                        <input type="radio" value="incorrect-eight" name="question-eight" onclick="optionThirtyOne()"/> <label for="option-31">HyperTexting Markup Language </label> 
-                        <br>
-                        <input type="radio"  value="incorrect-eight" name="question-eight" onclick="optionThirtyTwo()"/> <label for="option-32"> HyperTexting Markup Logarithms </label> 
-                        <br>
-                        <p id="outputEight"></p>
-                        <button id="buttonNine" onclick="question9()">NEXT</button>
-                    </section>
-                    <section id="questionNine">
-                        <h1> 9) What html stands for? </h1>
-                        <input type="radio" value="incorrect-nine" name="question-nine" onclick="optionThirtyThree()"/> <label for="option-33">HyperText Markup Logarithms </label>
-                        <br>
-                        <input type="radio"  value="correct-nine" name="question-nine" onclick="optionThirtyFour()"/> <label for="option-34">HyperText Markup Language </label>
-                        <br>
-                        <input type="radio" value="incorrect-nine" name="question-nine" onclick="optionThirtyFive()"/> <label for="option-35">HyperTexting Markup Language </label> 
-                        <br>
-                        <input type="radio"  value="incorrect-nine" name="question-nine" onclick="optionThirtySix()"/> <label for="option-36"> HyperTexting Markup Logarithms </label> 
-                        <br>
-                        <p id="outputNine"></p>
-                        <button id="buttonTen" onclick="question10()">NEXT</button>
-                    </section>
-                    <section id="questionTen">
-                        <h1> 10) What html stands for? </h1>
-                        <input type="radio" value="incorrect-ten" name="question-ten" onclick="optionThirtySeven()"/> <label for="option-37">HyperText Markup Logarithms </label>
-                        <br>
-                        <input type="radio"  value="incorrect-ten" name="question-ten" onclick="optionThirtyEight()"/> <label for="option-38">HyperText Markup Language </label>
-                        <br>
-                        <input type="radio" value="correct-ten" name="question-ten" onclick="optionThirtyNine()" /> <label for="option-39">HyperTexting Markup Language </label> 
-                        <br>
-                        <input type="radio"  value="incorrect-ten" name="question-ten" onclick="optionTen()" /> <label for="option-40"> HyperTexting Markup Logarithms </label> 
-                        <br>
-                        <p id="outputTen"></p>
-                        <h1 id="finalMessage"> Quiz ended</h1>
-                        <button id="results" onclick="endQuiz()">SEE RESULTS</button> 
-                        </section>
-                    </section>
-                    <section id="ranking">
-                        <h1> SCORES </h1>
-                        <button>START OVER</button>
-                        <input type="text" name="initials" id="initials" placeholder="type your initials">
-                        <button id="todo-form" onclick="displayRanking">submit</button>
-                        <ul id="scores"></ul>
-                  
-                    </section>
-
-                    <div class="card">
-                    
-                        <form id="todo-form" method="POST">
-                        
-                          <input type="text" placeholder="I need to..." name="todo-text" id="todo-text" />
-                          <button id="todo-form" onclick="displayScr">submit</button>
-                        </form>
-
-                        <ul id="todo-list"></ul>
-                    
-                    </div>
-                
-                    
-        <div id="timer"></div>
-        <script src="./assets/script.js"></script>
-    </body>
+  <!-- File with all the functionality of the quiz -->
+  <script src="script.js"></script>
+</body>
 </html>
+
